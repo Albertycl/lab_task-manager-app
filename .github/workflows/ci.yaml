@@ -39,16 +39,16 @@ jobs:
       # ---- BUILD AND PUSH IMAGES ----
       - name: Build and push backend
         run: |
-          docker build -t ghcr.io/${{ github.actor }}/flask-backend:${{ github.sha }} ./backend
-          docker push ghcr.io/${{ github.actor }}/flask-backend:${{ github.sha }}
+          docker build -t ghcr.io/albertycl/flask-backend:${{ github.sha }} ./backend
+          docker push ghcr.io/albertycl/flask-backend:${{ github.sha }}
         # builds from backend/Dockerfile
         # tags with commit SHA (e.g. ghcr.io/albertycl/flask-backend:a1b2c3d)
         # pushes to GitHub Container Registry
 
       - name: Build and push frontend
         run: |
-          docker build -t ghcr.io/${{ github.actor }}/quasar-frontend:${{ github.sha }} ./frontend
-          docker push ghcr.io/${{ github.actor }}/quasar-frontend:${{ github.sha }}
+          docker build -t ghcr.io/albertycl/quasar-frontend:${{ github.sha }} ./frontend
+          docker push ghcr.io/albertycl/quasar-frontend:${{ github.sha }}
 
       # ---- THE GLUE: UPDATE CONFIG REPO ----
       - name: Update config repo
