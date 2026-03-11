@@ -34,7 +34,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}         # your GitHub username (Albertycl)
-          password: ${{ secrets.PAT_TOKEN }}    # the secret from step 4
+          password: ${{ secrets.CICD_SECRET }}    # the secret from step 4
 
       # ---- BUILD AND PUSH IMAGES ----
       - name: Build and push backend
@@ -53,7 +53,7 @@ jobs:
       # ---- THE GLUE: UPDATE CONFIG REPO ----
       - name: Update config repo
         run: |
-          git clone https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/Albertycl/lab_gitops.git
+          git clone https://x-access-token:${{ secrets.CICD_SECRET }}@github.com/Albertycl/lab_gitops.git
           cd lab_gitops
           sed -i "s/tag: .*/tag: ${{ github.sha }}/" task-manager/values.yaml
           git config user.name "CI Bot"
