@@ -1,0 +1,22 @@
+{
+  "name": "task-frontend",
+  "version": "1.0.0",
+  "description": "Task Manager - Quasar Frontend",
+  "productName": "Task Manager",
+  "private": true,
+  "scripts": {
+    "dev": "quasar dev",
+    "build": "quasar build",
+    "lint": "eslint --ext .js,.vue src"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.16.0",
+    "axios": "^1.7.0",
+    "quasar": "^2.17.0",
+    "vue": "^3.5.0",
+    "vue-router": "^4.4.0"
+  },
+  "devDependencies": {
+    "@quasar/app-vite": "^2.1.0"
+  }
+}
